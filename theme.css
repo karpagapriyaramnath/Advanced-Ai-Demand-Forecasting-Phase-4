@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Inter, ui-sans-serif, system-ui, Segoe UI, Arial, sans-serif; background: #020617; transition: background .2s, color .2s; }
+.app-shell { background: #020617; }
+
+@layer components {
+  .section-label { @apply text-xs font-black uppercase tracking-[0.18em] text-blue-300; }
+  .section-title { @apply mt-1 text-2xl font-black text-white md:text-3xl; }
+  .surface { @apply rounded-xl border border-white/5 bg-[#0f172a] p-5 shadow-2xl; }
+  .figure-tile { @apply relative flex min-h-24 items-center justify-between overflow-hidden rounded-xl p-5 shadow-2xl transition hover:-translate-y-1; }
+  .side-link { @apply flex h-10 w-full items-center gap-3 rounded-lg px-3 text-left text-sm font-bold text-slate-400 transition hover:bg-white/5 hover:text-white; }
+  .side-link-active { @apply bg-blue-600 text-white shadow-lg shadow-blue-950/40 hover:bg-blue-600; }
+  .round-tool { @apply relative grid h-10 w-10 place-items-center rounded-lg border border-white/10 bg-[#10182c] text-slate-300 shadow-sm transition hover:border-blue-500/50 hover:text-white; }
+  .field { @apply h-11 rounded-lg border border-white/5 bg-[#0b1224] px-3 text-sm font-bold text-slate-200 outline-none transition placeholder:text-slate-500 focus:border-blue-500/70 focus:ring-4 focus:ring-blue-500/10; }
+  .primary-action { @apply inline-flex h-11 items-center justify-center gap-2 rounded-lg bg-blue-600 px-5 font-black text-white shadow-lg transition hover:bg-blue-700 disabled:opacity-60; }
+  .secondary-action { @apply h-11 rounded-lg border border-white/10 bg-[#10182c] px-5 font-black text-slate-200 transition hover:border-blue-500/50; }
+  .soft-empty { @apply rounded-xl border border-dashed border-white/10 bg-[#0f172a] p-8 text-center text-slate-400; }
+  .export-card { @apply flex min-h-32 items-center justify-between gap-4 rounded-xl border border-white/5 bg-[#0f172a] p-6 text-left text-xl font-black text-white shadow-2xl transition hover:-translate-y-1 hover:border-blue-500/50; }
+  .event-row { @apply grid gap-2 rounded-xl border border-white/5 bg-[#0b1224] p-3 text-sm text-slate-300 md:grid-cols-[1fr_1fr_1fr]; }
+  .filter-bar { @apply flex flex-wrap gap-3 rounded-xl border border-white/5 bg-[#0f172a] p-4 shadow-2xl; }
+  .live-pill { @apply inline-flex h-11 items-center gap-2 rounded-lg bg-emerald-500/10 px-4 text-sm font-black text-emerald-300; }
+  .table-grid { @apply space-y-2; }
+  .data-row { @apply grid items-center gap-3 rounded-xl border border-white/5 bg-[#0b1224] p-3 text-sm text-slate-300 md:grid-cols-[1.2fr_1fr_1fr_auto]; }
+  .insight-card { @apply rounded-xl border border-white/5 bg-[#0b1224] p-4 font-semibold text-slate-300; }
+  .search-results { @apply absolute right-0 top-14 z-30 w-80 rounded-xl border border-white/10 bg-[#10182c] p-4 text-white shadow-2xl; }
+  .search-row { @apply mt-2 rounded-lg bg-[#0b1224] p-2 text-sm font-bold text-slate-300; }
+  .risk-critical { @apply rounded-full bg-red-100 px-3 py-1 text-red-700; }
+  .risk-watch { @apply rounded-full bg-amber-100 px-3 py-1 text-amber-700; }
+  .risk-healthy { @apply rounded-full bg-green-100 px-3 py-1 text-green-700; }
+}
+
+body.dark { color: #e5e7eb; background: #020617; }
+body.dark .app-shell { background: #020617; color: #e5e7eb; }
+body.dark aside,
+body.dark header,
+body.dark .surface,
+body.dark .figure-tile,
+body.dark .filter-bar,
+body.dark .round-tool,
+body.dark .field,
+body.dark .search-results,
+body.dark .export-card { background-color: #0f172a; border-color: rgba(255,255,255,.08); color: #f8fafc; }
+body.dark .data-row,
+body.dark .event-row,
+body.dark .insight-card,
+body.dark .search-row { background-color: #0b1224; border-color: rgba(255,255,255,.08); color: #dbeafe; }
+body.dark .text-graphite { color: #ecfdf5; }
+body.dark .text-slate-500,
+body.dark .text-slate-600 { color: #9ca3af; }
+body.dark .soft-empty { background-color: #0f172a; border-color: rgba(255,255,255,.1); }
